@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            background-color: aqua;
+            width: 16%;
+            padding: 10px;
+            margin: 10px;
+        }
+        input{
+            padding: 10px;
+            margin: 5px;
+        }
+        label{
+            padding: 10px;
+            margin: 1px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="register">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter your username"><br>
+        <input type="text" name="firstname" placeholder="Enter your first name"><br>
+        <input type="text" name="secondname" placeholder="Enter your last name"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <input type="password" name="password1" placeholder="password"><br>
+        <input type="password" name="password2" placeholder="confirm password"><br>
+        <input type="number" name="number" placeholder="Number"><br>
+        <input type="submit"><br>
+        
+    </form>
+    {% for msg in messages %}
+    <h1>{{msg}}</h1>
+    {% endfor %}
+</body>
+</html>
